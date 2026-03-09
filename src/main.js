@@ -34,6 +34,11 @@ const startInteractive = () => {
     rl.prompt();
   });
 
+  rl.on("SIGINT", () => {
+    console.log("");
+    rl.close();
+  });
+
   rl.on("close", () => {
     console.log("Thank you for using Data Processing CLI!");
     process.exit(0);
