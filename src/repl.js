@@ -7,7 +7,7 @@ export const handleInput = async (input, currentDirectory) => {
     return null;
   }
 
-  const [command, ...argsArray] = trimmedInput.split(" ");
+  const [command, ...argsArray] = trimmedInput.split(/\s+/);
   const options = parseArgs(argsArray);
 
   try {
