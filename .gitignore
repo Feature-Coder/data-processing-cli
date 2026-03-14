@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+data.json
+data.csv
+
+**/*.txt
+**/*.txt.*
+
+workspace/
