@@ -37,10 +37,15 @@ export const listDir = async (currentDirectory) => {
   folders.sort(sortFn);
   files.sort(sortFn);
 
+  const maxLen = [...folders, ...files].reduce(
+    (max, item) => Math.max(max, item.name.length),
+    0,
+  );
+
   for (const item of folders) {
-    console.log(`${item.name.padEnd(30)} [folder]`);
+    console.log(`${item.name.padEnd(maxLen)}  [folder]`);
   }
   for (const item of files) {
-    console.log(`${item.name} [file]`);
+    console.log(`${item.name.padEnd(maxLen)}  [file]`);
   }
 };
